@@ -1,0 +1,18 @@
+.checkbox, .radio {
+    position: relative;
+    display: block;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.main-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    padding: 15px;
+    right: 0px;
+    color: #444;
+    border-top: 1px solid #d2d6de;
+}

@@ -1,0 +1,74 @@
+<!--Alunos: Marcos Rodrigues da Silva - RA: 201402158921
+			Antonio Marcos Martins Leite - RA: 201402254962-->
+			
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>DESAFIO RIA</title>
+
+	 <link rel="stylesheet" type="text/css" href="estilo.css"/> 
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mask.min.js"/></script>
+	<script type="text/javascript" src="js/script.js"></script>
+	<link href="css/estilo.css" rel="stylesheet" />
+	
+</head>
+<body onload="$('#nome').focus()">
+	<form class="form-control">
+		<div class="form-group">
+			<div class="col-sm-12">
+			
+			<div class="form-group">
+				<div class="alert alert-success">
+				<div id="centro" class="container-fluid"><h4>CADASTRO RIA</h4></div>
+			</div>
+			<div class="well">
+			<input class="form-control"	placeholder="NOME" type="text" id="nome" maxlength="50"	onkeypress="return validaNome(event);" onkeyup="validaMaiuscula(this)" /> 
+		</div>
+		<div class="well">
+			<input  class="form-control" placeholder="PROFISSAO" type="text" id="profissao" maxlength="50" onkeypress="return validaNome(event);" onkeyup="validaMaiuscula(this)" />
+		</div>
+		
+		   
+	  
+	  	  	  <div class="row">
+        <div class="col-sm-6">
+          <div class="well">
+           <input class="form-control" placeholder="TELEFONE" type="text" id="telefone" OnKeyPress="mascaraTelefone('##-####-####', this)" maxlength = "12" />
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="well">
+             <input class="form-control"	placeholder="SALÁRIO" type="text" id="salario" maxlength="50"  onKeyPress="return(MascaraMoeda(this,'.',',',event))" /> 
+          </div>
+        </div>
+      </div>
+	 
+	  
+	  
+	  
+		<div class="form-group" id="botao">
+			<input class="btn btn-success" type="button" value="Salvar" id="salvar" />
+			<input class="btn btn-danger" type="button" value="Cancelar" id="cancelar" />
+		</div>
+		
+	</form>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<table id="tabela" class="table table-striped" style="display: none;">
+		<thead>
+			<th>NOME</th>
+			<th>PROFISSAO</th>
+			<th>TELEFONE</th>
+			<th>SALÁRIO</th>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
+</body>
+</html>

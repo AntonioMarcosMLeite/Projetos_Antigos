@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <title>Cadastro de Clientes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<link href="/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+	<script src="bootstrap/js/jquery.js"></script>	
+	<script type="text/javascript" src="validaCampos.js"></script>
+   
+   <style>
+   
+	  
+      
+	  .botao{
+			
+				position: absolute;
+				left: 0;
+				top: auto;
+				width: 100%;
+				text-align: center;
+				
+		 }
+		 
+	  .style1 {  color: #FF0000;
+				font-size: 15px;  
+				
+		}
+		
+	
+    </style>
+   
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    
+    
+  </head>
+
+  <body onload="document.getElementById('cpf').focus()">	
+	
+	<div class="container" align="left">
+		<div align="center" class="container-fluid" ><h2><span class="label label-default">Cadastro de Clientes</span></h2></div>
+					<br/>
+		
+		<form name = "cadastro" id="cadastro" method="post">
+			
+				<div class="row form-group" >
+					<div class="col-md-1"><label>CPF:</label></div>					
+						<div class="col-md-5">
+							<input type = "text"  class="form-control" name = "cpf" id = "cpf" maxlength = "14"
+								onBlur="verificarCPF(cadastro.cpf.value)" onkeypress="mascara(this, cpf_mask)">
+						</div>
+						<div class="col-md-1"><label>Nome:</label></div>
+							<div class="col-md-5">
+							<input type = "text" class="form-control"  id = "nome" maxlength = "60" 
+									onBlur="validaNome(cadastro.nome.value)" onkeyup="validaMaiuscula(this)">
+					</div>
+				</div>
+ 				
+				<div class="row form-group">
+					<div class="col-md-1"><label>Endereço:</label></div>
+						<div class="col-md-5">
+						<input type = "text" class="form-control"  id = "endereco"  maxlength = "60" 			
+						onBlur = "validaCampos(cadasdivo.endereco.value)" onkeyup="validaMaiuscula(this)">
+						</div>
+					<div class="col-md-1"><label>Cidade:</label></div>
+					<div class="col-md-5">
+					<input type = "text" class="form-control"  id = "cidade"  maxlength = "60" onkeyup="validaMaiuscula(this)" 
+					onBlur ="validaCidade(cadasdivo.cidade.value)">
+					</div>
+				</div>	
+				
+				<div class="row form-group">
+					<div class="col-md-1"><label>Sexo:</label></div>
+					<div class="col-md-5">				
+					<select class="form-control" id="sexo" onBlur="validaSelect(cadastro.sexo.value)"><option>--Escolher Sexo--</option>
+										                 <option>Masculino</option>
+									     	             <option>Feminino</option></select>
+				</div>
+					<div class="col-md-1"><label>Telefone:</label></div>
+					<div class="col-md-5">	
+					<input type = "text" class="form-control" id = "telefone"  maxlength = 12 OnKeyPress="mascaraTelefone('##-####-####', this)">
+					</div>
+				</div>	
+				
+				<div class="row form-group">
+				<div class="col-md-1"><label>E-mail:</label></div>
+					<div class="col-md-5">	
+					<input type = "text" class="form-control"  id = "email" onBlur="validaEmail()"  maxlength = "40" >
+						
+				</div>
+				<div class="col-md-1"><label>Senha:</label></div>
+					<div class="col-md-5">	
+					<input class="form-control" type = "password" id = "senha" onblur=validaSenha()>
+					</div>
+				</div>	
+				
+				<div class="row form-group">
+				<div class="col-md-2"><label>Receber Promoções:</label></div>
+					<div class="col-md-10">
+					<input type = "checkbox" id = "sim" VALUE="sim" onclick="validaChekBox()"> Sim 
+										   <input type = "checkbox" id = "nao" VALUE="nao" onBlur="validaChekBox()"> Não 
+										  <span class="style1"> <div class="container-fluid" name="msgpromo" id="msgpromo"></div></span>
+												
+					</div>
+				</div>
+				<br/>
+				
+				<div class="row form-group" id="obs">
+					<div class="col-md-1"><label>Obs:</label></div>
+						<div class="col-md-11">
+						<TEXTAREA class="form-control" id="obs"  ROWS=6  onBlur="observacao()"></TEXTAREA ></div> 
+				</div>	
+				
+				<div id="botao" class="botao">
+					<div class="col-md-12">
+						<input type="submit" class="btn btn-success" value="Enviar" id = "enviar" onclick = "verificarCPF(cadasdivo.cpf.value">
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type = "button" id = "valores" value="Valores" class="btn btn-info" onclick = "imprimirValores()">
+					</div>
+				</div>
+				
+														
+			</form>
+		</div>
+	</body>
+</html>

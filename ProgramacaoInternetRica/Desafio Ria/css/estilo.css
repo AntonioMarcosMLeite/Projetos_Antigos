@@ -1,0 +1,32 @@
+.bigger{
+
+	font-size: 200px;
+}
+
+.destacar {
+  border-color: blue;
+
+ border-width: 4px;
+border-style: dashed;
+ font-size: 50px;
+ 
+}
+.lista{
+	background-color: red;
+}
+
+#botao{
+			
+				position: absolute;
+				left: 0;
+				top: auto%;
+				width: 100%;
+				text-align: center;
+				
+		 }
+		 
+		 
+#centro{
+	
+	text-align: center;
+}

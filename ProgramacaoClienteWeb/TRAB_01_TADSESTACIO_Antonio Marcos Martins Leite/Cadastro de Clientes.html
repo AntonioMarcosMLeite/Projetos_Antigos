@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Cadastro de Clientes</title>
+		<script type="text/javascript" src="validaCampos.js"></script>
+		
+		
+</head>
+			
+	<body onload="document.cadastro.cpf.focus()">	
+		
+		<form name="cadastro" method="post">
+			<table border = 1>
+				<tr>
+					<td colspan = "2" align = center >Cadastro de Clientes</td>
+				</tr>	
+				<tr>
+					<td>CPF:</td><td><input type = "text"  name = "cpf" size = "14" maxlength = "14" 
+					onBlur="verificarCPF(cadastro.cpf.value)" onkeypress="mascara(this, cpf_mask)"><span class="style1" style="color:red">*</span>
+					</td>				
+				</tr>
+				<tr>
+					<td>Nome:</td><td><input type = "text"  name = "nome" size = "80" maxlength = "80" 
+					onBlur="validaNome(cadastro.nome.value)" onkeyup="validaMaiuscula(this)"><span style="color:red" >*</span>
+					</td>
+				</tr> 
+				<tr>
+					<td>Endereço:</td><td><input type = "text"  name = "endereco" size = "80" maxlength = "80" 			
+					onBlur = "validaCampos(cadastro.endereco.value)" onkeyup="validaMaiuscula(this)"><span class="style1" style="color:red" >*</span></td></tr>
+				<tr>
+					<td>Cidade:</td><td><input type = "text"  name = "cidade" size = "50" maxlength = "50" onkeyup="validaMaiuscula(this)" 
+					onBlur ="validaCidade(cadastro.cidade.value)"><span class="style1" style="color:red" >*</span>
+					</td>
+				</tr>
+				<tr>
+					<td>Sexo:</td><td><select name="sexo" id="sexo" onBlur="validaSelect(cadastro.sexo.value)"><option>--Escolher Sexo--</option>
+										                 <option>Masculino</option>
+									     	             <option>Feminino</option></select><span class="style1" style="color:red">*</span>
+					</td>
+				</tr>
+				<tr>
+					<td>Telefone:</td><td><input type = "text"  name = "telefone" size = 12 maxlength = 12 OnKeyPress="mascaraTelefone('##-####-####', this)">
+					</td>
+				</tr>
+				<tr>
+					<td>E-mail(Login):</td><td><input type = "text"  name = "email" onBlur="validaEmail()" size = "40" maxlength = "40" >
+						<span class="style1" style="color:red">*</span>
+					</td>
+				</tr>
+				<tr>
+					<td>Senha:</td><td><input type = "password" name = "senha" onblur=validaSenha()><span class="style1" style="color:red">*</span></td>
+					</td>
+				</tr>
+				<tr>
+					<td>Receber Promoções:</td><td><input type = "checkbox" name = "sim" VALUE="sim" onclick="validaChekBox()"> Sim 
+										   <input type = "checkbox" name = "nao" VALUE="nao" onBlur="validaChekBox()"> Não 
+										   <span class="style1" style="color:red">*<div name="msgpromo" id="msgpromo"></span></div>
+												
+					</td>
+				</tr>
+				<tr>
+					<td>Obs:</td><td><TEXTAREA NAME="obs"  ROWS=6 COLS=100 onBlur="observacao()"></TEXTAREA></td></tr> 
+					<tr><td></td><td><input type = "submit"  name = "enviar" value = "Enviar" onclick = "verificarCPF(cadastro.cpf.value)"> 
+									 <input type = "button"  name = "valores" value = "Valores" onclick = "imprimirValores()" />
+					</td>
+				</tr>
+			
+			</table>
+		</form>
+
+	</body>
+	
+</html>
+
